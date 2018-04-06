@@ -17,10 +17,14 @@ awk -va=1 -vb=s '{print $1,$1+a,$1b}' log.txt
 
 echo "输出文件中，第一个单词大于2的行"
 awk '$1>2' log.txt
+
 echo "输出文件中，第一个单词等于2 的行的第一个和第三个单词"
 awk '$1==2 {print $1,$3}' log.txt
+
 echo "输出第一个单词大于2，第二个单词为Are，的行的第一、二、三个单词"
 awk '$1>2 && $2=="Are" {print $1,$2,$3}' log.txt
+
+
 
 echo "内建变量"
 awk 'BEGIN{printf "%4s %4s %4s %4s %4s %4s %4s %4s %4s\n","FILENAME","ARGC","FNR","FS","NF","NR","OFS","ORS","RS";printf "---------------------------------------------\n"} {printf "%4s %4s %4s %4s %4s %4s %4s %4s %4s\n",FILENAME,ARGC,FNR,FS,NF,NR,OFS,ORS,RS}'  log.txt
@@ -28,6 +32,8 @@ awk 'BEGIN{printf "%4s %4s %4s %4s %4s %4s %4s %4s %4s\n","FILENAME","ARGC","FNR
 echo "分隔符使用'"
 # FS	字段分隔符(默认是任何空格)
 awk -F\' 'BEGIN{printf "%4s %4s %4s %4s %4s %4s %4s %4s %4s\n","FILENAME","ARGC","FNR","FS","NF","NR","OFS","ORS","RS";printf "---------------------------------------------\n"} {printf "%4s %4s %4s %4s %4s %4s %4s %4s %4s\n",FILENAME,ARGC,FNR,FS,NF,NR,OFS,ORS,RS}'  log.txt
+
+
 
 echo "输出顺序号 NR, 匹配文本行号"
 awk '{print NR,FNR,$1,$2,$3}' log.txt

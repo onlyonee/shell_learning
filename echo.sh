@@ -39,3 +39,29 @@ echo `date`
 # 原样输出字符串，不进行转义或取变量(用单引号)
 echo '$name\"'
 # 输出：$name\"
+
+echo "除非new已经被设置，且不为空，则输出new变量的值；否则输出Variable}"
+echo ${new:-variable}
+mm=wahh
+echo ${mm:-variable}
+
+echo "${mm}" '${mm}'
+
+
+
+variable="User:123:321:/home/dir"
+# 如何只用 echo 命令获取 home/dir
+echo ${variable#*:*:*:}
+echo ${variable##*:}
+# 从上面的字符串中获取 “User”
+echo ${variable%:*:*:*}
+echo ${variable%%:*}
+# 打印变量的最后 5 个字符，：后面一定要有空格
+echo ${variable: -5}
+
+# 将变量中的pattern替换为replacement，但是不影响变量值
+variable1="hello replacement pattern"
+echo ${variable1//pattern/replacement}
+
+echo ${variable1}
+
