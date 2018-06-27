@@ -36,6 +36,9 @@ echo ${array_name[1]}
 # 打印数组所有元素
 echo ${array_name[@]}
 echo ${array_name[*]}
+# 输出所有数组索引
+echo ${!array_name[@]}
+
 
 # 获取数组长度
 length=${#array_name[@]}
@@ -46,3 +49,10 @@ echo ${length2}
 # 取得数组单个元素的长度
 lengthn=${#array_name[1]}
 echo ${lengthn}
+
+# 移除数组中索引为 2 的元素
+unset array_name[2]
+echo ${array_name[@]}
+
+
+

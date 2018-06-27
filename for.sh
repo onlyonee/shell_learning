@@ -14,7 +14,7 @@ done
 
 
 # 写出输出数字 0 到 100 中 3 的倍数(0 3 6 9 …)的命令
-# mac执行失败
+# mac执行失败，Linux执行成功
 for i in {0..100..3}; do echo $i; done
-
+# mac和Linux都执行成功
 for (( i=0; i<=100; i=i+3 )); do echo "Welcome $i times"; done
