@@ -51,8 +51,13 @@ lengthn=${#array_name[1]}
 echo ${lengthn}
 
 # 移除数组中索引为 2 的元素
-unset array_name[2]
+unset ${array_name[2]}
 echo ${array_name[@]}
 
-
-
+# 替换文件中字符
+aa="a-123,b-123\n"
+# 将${aa}里的第一个123替换为321
+a1=${aa/123/321}
+# 将${aa}里的全部123替换为321
+a2=${aa//123/321}
+printf  ${a1}${a2}
