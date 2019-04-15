@@ -1,8 +1,3 @@
 #!/usr/bin/env bash
 
-aa="a-123,b-123\n"
-#替换文件中的第一个字符
-a1=${aa/123/321}
-#替换文件中的全部字符
-a2=${aa//123/321}
-printf  ${a1}${a2}
+for dir in $(ls);do [ -d $dir ] && echo $dir; done;
