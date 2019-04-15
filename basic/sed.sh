@@ -10,6 +10,8 @@ sed -i'' -e 's/chenshen/mahq/g' myfile.txt
 
 # 将文件中的 chenshen 替换成 mahq
 sed -i 's/chenshen/mahq/g' myfile.txt
+# 去掉引号
+echo \"123456789\" | sed 's/\"//g'
 
 # 在第二行插入test001，即插入的内容在第二行
 sed -i  "2i\test001" myfile.txt
